@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>hey</title>
+</head>
+<body>
+
+	<li>$event.getCategory()</li>
+	<li>$event.getName()</li>
+	<li>$event.getLocation()</li>
+	<li>$event.getDate()</li>
+	<li>$event.getNumberOfSeats()</li>
+	<li>$event.getFreeSeats()</li></br>
+	
+#set( $number = 0 )
+<table border="5" width="500" height="500">
+	
+	#foreach($i in [1..$event.getxSize()])
+		<tr>
+			#foreach($j in [1..$event.getySize()])
+				#if($event.getChairs().get($number).isReserved() == true)
+					<td bgcolor="red"></td>		
+				#end
+				#if($event.getChairs().get($number).isReserved() == false)
+					<td bgcolor="green"><a href="/controllerTicketShop/welcome/buyTicketTo.$number">X</a></td>
+				#end
+			#set( $number = $number + 1 )
+			#end
+		</tr>  
+	#end
+
+
+</body>
+</html>

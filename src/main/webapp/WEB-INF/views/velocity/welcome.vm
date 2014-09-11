@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>hey</title>
+</head>
+<body>
+
+#foreach($event in $eventList)
+	<li><a href="/controllerTicketShop/welcome/goTo.$event.getId()">$event.getName()</a></li>
+#end
+<p>-----Event-----</p>
+#foreach($event in $myEvents)
+	<li>$event.getName()</li>
+#end
+<p>-----Chair-----</p>
+#foreach($chair in $myChairs)
+	<li>$chair.getrNumber(),$chair.getcNumber()    </li>
+#end
+
+</body>
+</html>
